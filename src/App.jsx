@@ -12,14 +12,14 @@ import Button from "./components/Button.jsx";
 
 const App = () => {
   const generateLinks = (array) => {
-    return array.map((item, index) => {
-      if (item.children) {
+    return array.map(({href, text, children}, index) => {
+      if (children) {
         return <div key={index} className="list-btn">
-          {item.text}
-          <div className="sub-list">{generateLinks(item.children)}</div>
+          {text}
+          <div className="sub-list">{generateLinks(children)}</div>
         </div>;
       }
-      return <NavLink href={item.href} key={index}>{item.text}</NavLink>
+      return <NavLink href={href} key={index}>{text}</NavLink>
     })
   }
 
@@ -27,8 +27,8 @@ const App = () => {
       array.map((item, index) =>
         <Button key={index}>{item}</Button>);
   const generateCards = (array) =>
-    array.map((item, index) =>
-      <Card title={item.title} text={item.text} key={index}/>);
+    array.map(({icon, title, text}, index) =>
+      <Card icon={icon} title={title} text={text} key={index}/>);
 
   return (
     <>
