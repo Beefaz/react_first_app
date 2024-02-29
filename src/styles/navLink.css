@@ -1,0 +1,58 @@
+.nav-link, .list-btn {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.list-btn.closed .nav-link {
+    display: none;
+    font-weight: 500;
+}
+
+.nav-link a, .list-btn {
+    cursor: pointer;
+    color: rgba(60, 60, 60, 0.78);
+    font-weight: 500;
+}
+
+.nav-link a:hover, .list-btn:hover {
+    cursor: pointer;
+    color: #747bff;
+}
+
+.sub-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sub-list a {
+    padding: 2px 5px;
+    vertical-align: center;
+}
+
+.list-btn::after {
+    content: "∨";
+    margin-left: 2px;
+    font-weight: 600;
+}
+
+.list-btn:hover:after {
+    margin-top: 4px;
+    transform: rotate(180deg);
+}
+
+.sub-list * {
+    min-width: 100%;
+    text-align: left;
+}
+
+.list-btn:hover .sub-list {
+    display: initial;
+}

@@ -1,0 +1,8 @@
+.nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    gap: 15px;
+    color: rgba(60, 60, 60, 0.78);
+    min-height: 30px;
+}
